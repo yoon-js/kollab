@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.postgres.fields import ArrayField
+from core.apps.creator.models import KollabCreator
 
 # Create your models here.
 class KollabBusiness(models.Model):
@@ -7,8 +9,8 @@ class KollabBusiness(models.Model):
     deleted = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=100)
     description = models.TextField()
-    logo = models.ImageField(upload_to='business/logos')
-    cover = models.ImageField(upload_to='business/covers')
+    # logo = models.ImageField(upload_to='business/logos/business')
+    # cover = models.ImageField(upload_to='business/covers/cover')
     website = models.URLField()
     email = models.EmailField()
     phone = models.CharField(max_length=20)
@@ -17,9 +19,12 @@ class KollabBusiness(models.Model):
     country = models.CharField(max_length=100)
     postal_code = models.CharField(max_length=20)
     is_active = models.BooleanField(default=True)
-    campaign_id = models.CharField(max_length=100)
-    tier_id = models.CharField(max_length=100)
+    campaign_id = models.ForeignKey('KollabCampaign', on_delete=models.CASCADE)
+    tier_id = models.ForeignKey('KollabTier', on_delete=models.CASCADE)
     detail_id = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 class KollabCampaign(models.Model):
     id = models.AutoField(primary_key=True)
@@ -29,12 +34,20 @@ class KollabCampaign(models.Model):
     end_date = models.DateTimeField()
     bid = models.DecimalField(max_digits=10, decimal_places=2)
     is_active = models.BooleanField(default=True)
-    type = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='business/campaigns')
-    business_id = models.CharField(max_length=100)
-    creator_id = models.CharField(max_length=100)
+    category = models.CharField(max_length=100)
+    # logo = models.ImageField(upload_to='business/logos/campaign')
+    # cover = models.ImageField(upload_to='business/covers/campaign')
+    business_id = models.ForeignKey('KollabBusiness', on_delete=models.CASCADE)
+
+    creator_id = models.ForeignKey(KollabCreator, on_delete=models.CASCADE)
     currency_id = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 class KollabTier(models.Model):
     id = models.AutoField(primary_key=True)
     tier = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
