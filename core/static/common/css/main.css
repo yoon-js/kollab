@@ -17,9 +17,9 @@ a {
      -moz-appearance: unset;
           appearance: unset;
 }
-a:hover {
+/* a:hover {
   text-decoration: underline;
-}
+} */
 
 ul {
   list-style: none;
@@ -62,7 +62,7 @@ body {
   letter-spacing: -0.02em;
   line-height: 1.2em;
   word-break: keep-all;
-  background-color: #ecedf0;
+  background-color: #ffffff;
 }
 
 div, section {
