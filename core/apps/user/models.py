@@ -18,18 +18,32 @@ class KollabUser(AbstractUser):
     username = models.CharField(max_length=25, unique=True)
     password = models.CharField(max_length=25, verbose_name="password")
     role = models.CharField(max_length=50, choices=Role.choices)
-    creator = models.OneToOneField(KollabCreator, on_delete=models.CASCADE, null=True, blank=True)
-    business = models.OneToOneField(KollabBusiness, on_delete=models.CASCADE, null=True, blank=True)
+    creator = models.OneToOneField(
+        KollabCreator, on_delete=models.CASCADE, null=True, blank=True
+    )
+    business = models.OneToOneField(
+        KollabBusiness, on_delete=models.CASCADE, null=True, blank=True
+    )
     created = models.DateTimeField(auto_now_add=True)
     deleted = models.DateTimeField(null=True, blank=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField()
     is_active = models.BooleanField(default=True)
+    profile_image = models.ImageField(upload_to="user/profile", blank=True, null=True)
+    profile_image_url = models.CharField(
+        max_length=255, default="https://via.placeholder.com/150"
+    )
 
     def save(self, *args, **kwargs):
+        # Create a creator or business object depending on the role
         if self.role == self.Role.CREATOR:
             self.creator = KollabCreator.objects.create()
         elif self.role == self.Role.BUSINESS:
             self.business = KollabBusiness.objects.create()
+
+        if not self.profile_image and not self.profile_image_url:
+            self.profile_image_url = "https://via.placeholder.com/150"  # Default value if no thumbnail is set
+        else:
+            self.profile_image_url = self.profile_image.url
         super().save(*args, **kwargs)
