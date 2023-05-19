@@ -85,8 +85,10 @@ USE_I18N = True
 USE_TZ = True
 
 
-STATIC_ROOT = "/static/"
-STATICFILES_DIRS = ((BASE_DIR / "core/static"),)  # type: ignore
+STATIC_ROOT = "/static/"  
+STATICFILES_DIRS = (
+    (BASE_DIR / 'core/static'), # type: ignore
+)  
 
 MEDIA_ROOT = BASE_DIR / "core/media"  # type: ignore
 
