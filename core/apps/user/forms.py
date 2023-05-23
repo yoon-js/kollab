@@ -21,4 +21,3 @@ class SignUpForm(UserCreationForm):
         super().__init__(*args, **kwargs)
         self.role = self.fields["role"]
 
-
