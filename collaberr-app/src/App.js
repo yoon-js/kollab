@@ -1,14 +1,11 @@
 import React from 'react';
-import './static/css/style.css';
-import Topnav from './components/topnav';
-import { Outlet } from 'react-router-dom';
-
+import './Styles/style.css';
+import Layout from './containers/Layout';
 
 function App() {
   return (
     <div className="App">
-      <Topnav />
-      <Outlet />
+      <Layout />
     </div>
   );
 }

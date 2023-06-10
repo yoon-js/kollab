@@ -86,7 +86,43 @@ nav {
       }
   }
 }
-  
+ 
+/* Sidenav */
+#leftNav {
+  width: 240px;
+  min-width: 240px;
+  height: 100vh;
+  padding: var(--grid-large) 0;
+  overflow: scroll;
+  background-color: var(--color-gray-200);
+}
+
+#leftnav-menu {
+  border-top: 1px solid var(--color-gray-300);
+  margin-bottom: var(--grid-medium);
+
+  h6 {
+    padding: var(--grid-xsmall)  var(--grid-medium);
+    color: var(--color-gray-500);
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: var(--grid-xsmall);
+    padding: var(--grid-xxsmall) var(--grid-medium);
+    margin-bottom: var(--grid-xxsmall);
+    color: var(--color-gray-800);
+    font-weight: var(--font-weight-medium);
+    transition: all 0.1s ease-in-out;
+    // border-radius: var(--border-radius-medium);
+
+    &:hover {
+      background-color: var(--color-gray-300);
+    }
+  }
+}
+
 /* Header */
 .header {
     padding-top: calc(var(--grid-mega) * 2);

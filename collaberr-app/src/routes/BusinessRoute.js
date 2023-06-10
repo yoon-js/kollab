@@ -1,5 +1,5 @@
-import Business from '../../pages/business/business';
-import BusinessDashboard from '../../pages/business/business-dashboard';
+import Business from 'pages/business';
+import BusinessDashboard from '../pages/business/business-dashboard';
 
 const BusinessRoute = {
     path: 'business',

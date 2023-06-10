@@ -4,7 +4,7 @@ function CampaignCard({ campaignName, campaignCategory }) {
         <div className="campaign-card">
             <div>
                 <div className="campaign-imgbox">
-                    <img src="img/img_nullimg.png" />
+                    <img src="img/img_nullimg.png"/>
                 </div>
                 <h6 className="campaign-name text-headline-2">{campaignName}</h6>
             </div>

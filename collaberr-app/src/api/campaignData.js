@@ -69,6 +69,26 @@ const CampaignData = [
         bid: '300',
         category: 'marketing'
     },
+    {
+        id: '6',
+        name: 'kim',
+        startDate: '2022-06-01',
+        endDate: '2022-06-30',
+        thumbnail: 'img/img_nullimg.png',
+        description: 'sdfjalksdjf;laksjd;flkjas;ldkfja;lsdkfjasjgdhfasdghfklashdkjfhklsjdhfkajshdhaksdjf',
+        bid: '300',
+        category: 'marketing'
+    },
+    {
+        id: '6',
+        name: 'kim',
+        startDate: '2022-06-01',
+        endDate: '2022-06-30',
+        thumbnail: 'img/img_nullimg.png',
+        description: 'sdfjalksdjf;laksjd;flkjas;ldkfja;lsdkfjasjgdhfasdghfklashdkjfhklsjdhfkajshdhaksdjf',
+        bid: '300',
+        category: 'marketing'
+    },
 ];
 
 export default CampaignData;

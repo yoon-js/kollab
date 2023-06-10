@@ -369,7 +369,8 @@ iframe {
 }
 
 ol,
-ul {
+ul,
+li {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -704,6 +705,7 @@ h6 {
 /* Containers */
 .wrapbox {
   width: 100%;
+  display: flex;
 }
 
 .container--50 {
@@ -1133,6 +1135,38 @@ nav {
 #nav-menu a:not(.button):hover,
 #nav-tool a:not(.button):hover {
   background-color: var(--color-gray-200);
+}
+
+/* Sidenav */
+#leftNav {
+  width: 240px;
+  min-width: 240px;
+  height: 100vh;
+  padding: var(--grid-large) 0;
+  overflow: scroll;
+  background-color: var(--color-gray-200);
+}
+
+#leftnav-menu {
+  border-top: 1px solid var(--color-gray-300);
+  margin-bottom: var(--grid-medium);
+}
+#leftnav-menu h6 {
+  padding: var(--grid-xsmall) var(--grid-medium);
+  color: var(--color-gray-500);
+}
+#leftnav-menu li {
+  display: flex;
+  align-items: center;
+  gap: var(--grid-xsmall);
+  padding: var(--grid-xxsmall) var(--grid-medium);
+  margin-bottom: var(--grid-xxsmall);
+  color: var(--color-gray-800);
+  font-weight: var(--font-weight-medium);
+  transition: all 0.1s ease-in-out;
+}
+#leftnav-menu li:hover {
+  background-color: var(--color-gray-300);
 }
 
 /* Header */

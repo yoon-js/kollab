@@ -1,7 +1,7 @@
-import Campaign from "../../pages/campaign/campaign";
-import CampaignMain from "../../pages/campaign/campaign-home";
-import CampaignCreate from "../../pages/campaign/campaign-create";
-import CampaignDetails from "../../pages/campaign/campaign-details";
+import Campaign from 'pages/campaign';
+import CampaignMain from "../pages/campaign/campaign-home";
+import CampaignCreate from "../pages/campaign/campaign-create";
+import CampaignDetails from "../pages/campaign/campaign-details";
 
 
 const CampaignRoute = {

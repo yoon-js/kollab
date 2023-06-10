@@ -6,7 +6,7 @@ function UserLogin() {
     return (
         <div className="container--600">
             <div className="header">
-                <h1>Log In</h1>
+                <h2>Log In</h2>
                 <div className="spacer--12"></div>
                 <p>Please login to see this page.</p>
             </div>
