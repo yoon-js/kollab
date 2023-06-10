@@ -78,3 +78,6 @@ venv/
 .DS_Store
 .idea
 .vscode
+
+# Old files
+.core
